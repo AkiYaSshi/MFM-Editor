@@ -9,7 +9,7 @@ $(function () {
     const All = $('#WindowsPanel *');
     Showpanel.addEventListener('click', function () {
         if (Panel.style.display === 'none' || Panel.style.display === '') {
-            Panel.style.display = 'inline-block'; // Åã¥Ü®i¶}ªº«ö¶s
+            Panel.style.display = 'inline-block'; // é¡¯ç¤ºå±•é–‹çš„æŒ‰éˆ•
             All.each(function () {
                 $(this).prop('disabled', false);
             });
@@ -52,115 +52,115 @@ $(function () {
 
     $('#Quote').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '>' + selectedText;
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
     $('#SearchBar').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = selectedText + ` search`;
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
 
     $('#CLI').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '```\n' + selectedText + '\n```';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
-    $('#LineCLI').on('click', function () {
+    $('#Line-CLI').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '`' + selectedText + '`';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
 
