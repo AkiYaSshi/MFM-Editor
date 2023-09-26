@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
 
 	const BReposition = document.getElementById('Reposition');
 	const InputCoorPanel = document.getElementById('InputCoorPanel');
@@ -37,11 +37,11 @@ $(document).ready(function () {
 
 	});
 
-  // 監聽 document 的點擊事件
+  //   聽 document    I   ぁ 
   $(document).click(function (e) {
-    // 檢查點擊事件是否在 InputCoorPanel 內
+    //  邠d I   ぁ O _ b InputCoorPanel   
 	  if (!$(e.target).closest("#text-input").length && !$(e.target).closest("#coordinate-Repo").length && !$(e.target).closest("#InputCoorPanel").length) {
-      // 如果不在 InputCoorPanel 內，隱藏 InputCoorPanel 並恢復按鈕的狀態
+      //  p G   b InputCoorPanel    A     InputCoorPanel  禱 _   s     A
       $("#InputCoorPanel").hide();
       $("#coordinate-Repo").css("background-color", "#f0f0f0");
 	}
