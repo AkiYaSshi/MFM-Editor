@@ -1,0 +1,44 @@
+#decoration-buttons {
+  margin-top: 0px !important;
+  padding: 0 !important;
+  display: none; /* 初始時隱藏容器 */
+
+
+}
+
+#common-decoration, #bold-button, #italic-button, #strike-through-button {
+   margin-top: 0px !important;
+   margin-bottom: 0px !important;
+
+}
+
+#common-decoration{
+    margin-left:0;
+}
+
+#bold-button {
+
+  transform: translateX(-100%); /* 初始時水平平移到左邊 */
+  transition: opacity 0.2s ease, transform 0.2s ease; /* 過渡效果 */
+  opacity: 0; /* 初始時透明度為0 */
+  margin-left:10px;
+
+}
+
+#italic-button {  
+
+transform: translateX(-150%); /* 初始時水平平移到左邊 */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* 過渡效果 */
+  opacity: 0; /* 初始時透明度為0 */
+  margin-right:5px;
+  margin-left:5px;
+
+}
+
+#strike-through-button {
+
+  transform: translateX(-200%); /* 初始時水平平移到左邊 */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* 過渡效果 */
+  opacity: 0; /* 初始時透明度為0 */
+
+}

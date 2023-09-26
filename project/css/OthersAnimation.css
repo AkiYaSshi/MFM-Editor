@@ -1,0 +1,43 @@
+﻿#OthersPanel *{
+    margin-left:5px;
+    margin-top:0;
+    opacity:0;
+}
+#OthersPanel{
+    margin:0;
+    display:none;
+    padding:0;
+}
+#jelly {
+    transform: translateX(-100%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* 過渡效果 */
+}
+#tada {
+    transform: translateX(-150%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 過渡效果 */
+}
+
+#bounce {
+    transform: translateX(-200%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* 過渡效果 */
+}
+
+#jump {
+    transform: translateX(-250%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 過渡效果 */
+}
+
+#shake {
+    transform: translateX(-300%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* 過渡效果 */
+}
+
+#twitch {
+    transform: translateX(-350%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.7s ease, transform 0.7s ease; /* 過渡效果 */
+}
+
+#sparkle {
+    transform: translateX(-400%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* 過渡效果 */
+}

@@ -1,0 +1,174 @@
+/* 按鈕/輸入框的css */
+#LinkType,
+#WindowsType,
+#SpinType {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 3px;
+    display: block !important;
+    position:relative;
+}
+
+    #LinkType::after,
+    #WindowsType::after,
+    #SpinType::after{
+        content:"";
+        width:400px;
+        height:1px;
+        margin:0 !important;
+        display:block;
+        position:absolute;
+        border-radius: 20px;
+        background-color:#ddd;
+        bottom:-10px;
+        border: thin;
+    }
+
+    .button-for-dec * {
+        border: groove 1px #aaa !important;
+    }
+.button-for-dec *:hover{
+    background-color:#afafaf !important;
+}
+.button-for-dec{
+    padding:0px !important;
+}
+
+::selection {
+    color: #FFF;
+    background-color: #6fC400;
+}
+
+html {
+    padding-left: 20%;
+    padding-top: 20px;
+}
+::-webkit-scrollbar { width: 5px; 
+    border-radius: 20px;}
+
+::-webkit-scrollbar-thumb { background-color: #BBB; 
+    border-radius: 20px;}
+
+body {
+    background: #f9f9f9;
+}
+
+#ColorButtonGroup{
+    padding:0px !important;
+    margin:0px !important;
+}
+#ColorButtonGroup *{
+    z-index:2;
+}
+#ColorChoose{
+    z-index:3;
+}
+/* 隱藏number input旁邊的小箭頭 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+        #text-input {
+            width: 492px;
+            height: 59px;
+            border: 10px;
+            border-radius: 20px;
+            border-style: none;
+            padding: 10px;
+            padding-top: 15px;
+            background-color: rgba(230, 230, 230, 0.1);
+            transition: background-color 0.2s ease;
+            outline: none;
+
+        }
+
+    input{
+        outline: none;
+    }
+button:active {
+    background: linear-gradient(105deg, #6EC400, #00C600);
+    color: #fff;
+}
+
+    /*設定inpu的變色效果*/
+       input:hover,
+       #text-input:hover {
+            border-style: none;
+            background-color: rgba(230, 230, 230, 0.9);
+            transition: background-color 0.2s ease;
+        }
+
+        #functional_button *,
+	    #selection * {
+            margin-top: 5px;
+            border-radius: 20px;
+            border-style: none;
+            padding: 5px;
+            transition: 0.2s ease;
+	        display: inline;
+        }
+        #clearAll{
+
+            background-color: #333;
+            color: #fff;
+            position:absolute;
+            transition: font-weight 0s;
+        }
+        #clearAll:active{
+            background:#333 !important;
+        }
+#copy-button {
+    margin-left: 318px;
+    background: linear-gradient(105deg, #6EC400, #00C600);
+    color: #fff;
+    position: absolute;
+    right: 0px;
+}
+        #copy-button:hover {
+            background: linear-gradient(105deg, #00C600, #6EC400);
+            color: #EEE;
+        }
+.bold-button {
+    font-weight: bold;
+
+}
+#h1,
+#picker,
+#Link-hyper {
+    display: inline;
+}
+#selection{
+    position:relative;
+}
+ #inpuandothers{
+     width:492px;
+     margin-right:35%;
+     position:relative;
+     margin-bottom:20px;
+ }
+#applyColor {
+    transform: translateX(-100%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* 過渡效果 */
+    opacity: 0; /* 初始時透明度為0 */
+    margin-left: 0;
+}
+#bg_applyColor {
+    transform: translateX(-150%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 過渡效果 */
+    opacity: 0; /* 初始時透明度為0 */
+    margin-left:5px;
+}
+#h1 {
+    transition: opacity 0.4s ease, transform 0.4s ease; /* 過渡效果 */
+    opacity: 0; /* 初始時透明度為0 */
+    
+}
+#picker {
+    transform: translateX(-250%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 過渡效果 */
+    opacity: 0; /* 初始時透明度為0 */
+}

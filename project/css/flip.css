@@ -1,0 +1,25 @@
+﻿#flip-panel {
+	margin-left: 5px !important;
+	margin-top: 0;
+	display: none;
+	border-left: 5px;
+	padding: 0px;
+}
+
+#flip-panel *{
+	opacity:0;
+}
+
+#Vflip {
+	transform: translateX(-100%); /* 初始時水平平移到左邊 */
+	transition: opacity 0.2s ease, transform 0.2s ease !important; /* 過渡效果 */
+	margin-left: 5px !important; /* 按鈕之間的間距 */
+	padding: 5px;
+}
+
+#Hflip {
+	transform: translateX(-150%); /* 初始時水平平移到左邊 */
+	transition: opacity 0.3s ease, transform 0.3s ease !important; /* 過渡效果 */
+	margin-left: 5px !important; /* 按鈕之間的間距 */
+	padding: 5px;
+}

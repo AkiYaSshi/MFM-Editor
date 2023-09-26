@@ -1,0 +1,25 @@
+﻿#WindowsPanel{
+    margin:0;
+    padding:0;
+    display:none;
+}
+#WindowsPanel *{
+    opacity:0;
+    margin-left:5px;
+}
+#Quote {
+    transform: translateX(-100%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* 過渡效果 */
+}
+#SearchBar {
+    transform: translateX(-150%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 過渡效果 */
+}
+#CLI {
+    transform: translateX(-200%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* 過渡效果 */
+}
+#Line-CLI {
+    transform: translateX(-250%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 過渡效果 */
+}
