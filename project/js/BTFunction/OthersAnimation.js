@@ -8,10 +8,11 @@ $(function () {
     const Shake = this.getElementById('shake');
     const Twitch = this.getElementById('twitch');
     const sparkle = this.getElementById('sparkle');
+    const blur = this.getElementById('blur');
     const AllOtherButtons = $('#OthersPanel *');
     Showpanel.addEventListener('click', function () {
         if (Panel.style.display === 'none' || Panel.style.display === '') {
-            Panel.style.display = 'inline-block'; // Åã¥Ü®i¶}ªº«ö¶s
+            Panel.style.display = 'inline-block'; // é¡¯ç¤ºå±•é–‹çš„æŒ‰éˆ•
             AllOtherButtons.each(function () {
                 $(this).prop('disabled', false);
             });
@@ -55,209 +56,241 @@ $(function () {
             $(sparkle).css({
                 'transform': 'translateX(-400%)'
             });
+            $(blur).css({
+                'transform': 'translateX(-450%)'
+            });
+
             setTimeout(function () {
                 Panel.style.display = 'none';
-            }, 800);
+            }, 900);
         }
     });
 
     $('#jelly').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '$[jelly ' + selectedText + ']';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
 
     $('#tada').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '$[tada ' + selectedText + ']';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
 
     $('#bounce').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '$[bounce ' + selectedText + ']';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
     $('#jump').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '$[jump ' + selectedText + ']';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
 
     $('#shake').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '$[shake ' + selectedText + ']';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
     $('#twitch').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '$[twitch ' + selectedText + ']';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
     $('#sparkle').on('click', function () {
 
-        // Àò¨ú textArea ¤¸¯À
+        // ç²å– textArea å…ƒç´ 
         let textArea = $('#text-input')[0];
 
-        // Àò¨ú textArea ¤¤³Q¿ï¨úªº¤å¥»
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
         let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ¦pªG selectedText ¬°ªÅ¡A«h¨Ï¥Î¾ã­Ó textArea ªº¤º®e
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
         if (!selectedText) {
             textArea.select();
         }
 
         selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 
-        // ²Õ¦X¦¨³Ì²×ªº¤å¦r
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
         let finalText = '$[sparkle ' + selectedText + ']';
 
-        // ¨ú±o¿ï¨ú½d³òªº°_©l¦ì¸m©Mµ²§ô¦ì¸m
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
         let start = textArea.selectionStart;
         let end = textArea.selectionEnd;
 
-        // ¨ú¥N¿ï¨ú½d³òªº¤å¦r¬° finalText
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
         textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
 
-        // ³]©w·sªº¿ï¨ú½d³ò
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
+        textArea.setSelectionRange(start, start + finalText.length);
+    });
+    $('#blur').on('click', function () {
+
+        // ç²å– textArea å…ƒç´ 
+        let textArea = $('#text-input')[0];
+
+        // ç²å– textArea ä¸­è¢«é¸å–çš„æ–‡æœ¬
+        let selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
+
+        // å¦‚æœ selectedText ç‚ºç©ºï¼Œå‰‡ä½¿ç”¨æ•´å€‹ textArea çš„å…§å®¹
+        if (!selectedText) {
+            textArea.select();
+        }
+
+        selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
+
+        // çµ„åˆæˆæœ€çµ‚çš„æ–‡å­—
+        let finalText = '$[blur ' + selectedText + ']';
+
+        // å–å¾—é¸å–ç¯„åœçš„èµ·å§‹ä½ç½®å’ŒçµæŸä½ç½®
+        let start = textArea.selectionStart;
+        let end = textArea.selectionEnd;
+
+        // å–ä»£é¸å–ç¯„åœçš„æ–‡å­—ç‚º finalText
+        textArea.value = textArea.value.substring(0, start) + finalText + textArea.value.substring(end);
+
+        // è¨­å®šæ–°çš„é¸å–ç¯„åœ
         textArea.setSelectionRange(start, start + finalText.length);
     });
 
