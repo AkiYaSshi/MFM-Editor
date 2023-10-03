@@ -59,7 +59,7 @@
 }
 #spdPanel::after {
     display:block;
-    content:"秒轉一圈";
+    content:"";
     font-size: 12px;
     position: absolute;
     left: 136px;
