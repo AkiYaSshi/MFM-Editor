@@ -1,4 +1,4 @@
-﻿#OthersPanel *{
+#OthersPanel *{
     margin-left:5px;
     margin-top:0;
     opacity:0;
@@ -40,4 +40,9 @@
 #sparkle {
     transform: translateX(-400%); /* 初始時水平平移到左邊 */
     transition: opacity 0.8s ease, transform 0.8s ease; /* 過渡效果 */
+}
+
+#blur {
+    transform: translateX(-450%); /* 初始時水平平移到左邊 */
+    transition: opacity 0.9s ease, transform 0.9s ease; /* 過渡效果 */
 }
