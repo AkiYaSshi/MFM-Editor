@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <script src="js\jQuery v3.7.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/colpick.js" type="text/javascript"></script>
+    <script src="js/jquery.i18n.js" type="text/javascript"></script>
+    <script src="js/BTFunction/fgChange.js" type="text/javascript"></script>
+    <script src="js/BTFunction/bgChange.js" type="text/javascript"></script>
+    <script src="js/BTFunction/RotateDeg.js" type="text/javascript"></script>
+    <script src="js/BTFunction/InsertLink.js" type="text/javascript"></script>
+    <script src="js/BTFunction/CommonDec.js" type="text/javascript"></script>
+    <script src="js/BTFunction/Scale.js" type="text/javascript"></script>
+    <script src="js\BTFunction\clickevent.js" type="text/javascript"></script>
+    <script src="js\BTFunction\flip.js" type="text/javascript"></script>
+    <script src="js\BTFunction\position.js" type="text/javascript"></script>
+    <script src="js\BTFunction\spin.js" type="text/javascript"></script>
+    <script src="js\BTFunction\OthersAnimation.js" type="text/javascript"></script>
+    <script src="js\BTFunction\Windows.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/colpick.css" type="text/css" />
+    <link rel="stylesheet" href="css/position.css" type="text/css" />
+    <link rel="stylesheet" href="css/button.css" type="text/css" />
+    <link rel="stylesheet" href="css/LinkPanel.css" type="text/css" />
+    <link rel="stylesheet" href="css/CommonDeco.css" type="text/css" />
+    <link rel="stylesheet" href="css/Scale.css" type="text/css" />
+    <link rel="stylesheet" href="css/flip.css" type="text/css" />
+    <link rel="stylesheet" href="css/spin.css" type="text/css" />
+    <link rel="stylesheet" href="css/OthersAnimation.css" type="text/css" />
+    <link rel="stylesheet" href="css/Windows.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="HTMLTitle">Rough editor for MFM</title>
+</head>
+
+<body>
+    <div id="Languagepanel" style="display:block; margin-bottom:10px;">
+        <a href="zh.html">中文（台灣）</a><a href="en.html">English</a><a href="ja.html">日本語</a>
+    </div>
+
+    <div id="inpuandothers">
+        <textarea id="text-input" placeholder=""></textarea>
+        <br>
+        <div id="selection">
+            <button id="copy-button"><b>Copy</b></button>
+            <button id="clearAll">Clear All</button>
+        </div>
+    </div>
+    <br><br>
+    <div id="functional_button">
+        <div id="CommonType">
+            <div class="button-for-dec">
+                <button id="common-decoration">Common Decorations ↪</button>
+            </div>
+            <div id="decoration-buttons" style="position: absolute;">
+                <button id="bold-button">Bold</button>
+                <button id="italic-button">Italic</button>
+                <button id="strike-through-button">Strikethrough</button>
+            </div>
+        </div>
+        <br>
+        <div id="ColorType">
+            <div class=button-for-dec>
+                <button id="ColorChoose">Color ↪</button>
+            </div>
+            <div id="ColorButtonGroup" style="display:none;">
+                <button id="applyColor">Apply Font Color</button>
+                <button id="bg_applyColor">Apply Background Color</button>
+                <label for="picker" id="h1" style="transform: translateX(-200%);">#</label>
+                <input type="text" id="picker" maxlength="6" size="6" placeholder="000000">
+            </div>
+        </div>
+        <br>
+        <div id="LinkType">
+            <button id="Link">Links ↪</button>
+            <div id="link-panel">
+                <div id="link-panel2">
+                    <input type="text" id="Link-hyper" placeholder="Input">
+                    <div id="button-container">
+                        <button id="Link-show-pre">Show Preview</button>
+                        <button id="Link-hide-pre">Hide Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div id="ScaleType">
+            <div class="button-for-dec">
+                <button id="Textscale">Scale ↪</button>
+            </div>
+            <div id="scalebuttons" style="display: none; position: absolute;">
+                <button id="freescale">Free Scale ↪</button>
+                <div id="scalecontainer" style="
+            position: absolute;
+            border-style: solid;
+            border-color: #ccc;
+            border-width: 1px;
+            display: none">
+                    <div id="inputXY">
+                        <div id="containerInputX">
+                            <label for="inputX" style="font-size: 8px;" min="-5" max="5" step="0.1">X</label>
+                            <input type="number" id="inputX">
+                        </div>
+                        <div id="containerInputY" style="font-size: 8px;">
+                            <label for="inputY">Y</label>
+                            <input type="number" id="inputY" min="-5" max="5" step="0.1">
+                        </div>
+                    </div>
+                    <button id="applybutton" style="font-size: 8px;">Apply</button>
+                </div>
+                <button id="small-text">Small</button>
+            </div>
+        </div>
+        <br>
+        <div id="RepositionType">
+            <div class=button-for-dec>
+                <button id="Reposition">Position ↪</button>
+            </div>
+            <div id="list-Reposition" style="display: none;">
+                <button id="coordinate-Repo">Custom ↪</button>
+                <div id="InputCoorPanel" style="display: none;">
+                    <div id="input-coordinate" style="display: flex;">
+                        <div id="Cor-XYinput">
+                            <div id="Cor-X">
+                                <label for="posivalue-X" style="font-size: 8px;">X</label>
+                                <input type="number" id="posivalue-X" style="font-size: 8px;" placeholder="0">
+                            </div>
+                            <div id="Cor-Y">
+                                <label for="posivalue-Y" style="font-size: 8px;">Y</label>
+                                <input type="number" id="posivalue-Y" style="font-size: 8px;" placeholder="0">
+                            </div>
+                        </div>
+                        <button id="applyCor" style="font-size: 8px;" title="default is 0">Apply</button>
+                    </div>
+                </div>
+                <button id="Incenter">Center</button>
+            </div>
+        </div>
+        <br>
+        <div id="WindowsType">
+            <div class="button-for-dec">
+                <button id="WindowsAndQuote">Railing and Quote ↪</button>
+            </div>
+            <div id="WindowsPanel">
+                <button id="Quote">Quote</button>
+                <button id="SearchBar">Search Bar</button>
+                <button id="CLI">CLI</button>
+                <button id="Line-CLI">Inline CLI</button>
+            </div>
+        </div>
+        <br>
+        <div id="RotateType">
+            <button id="rotate-button">Rotate</button>
+            <input type="number" id="rotate-degree" min="-360" max="360" placeholder="0" style="width: 70px;">
+            <label for="rotate-degree">°</label>
+        </div>
+        <br>
+        <div id="FlipType">
+            <div class=button-for-dec>
+                <button id="filp-button">Flip ↪</button>
+            </div>
+            <div id="flip-panel" style="position: absolute; display: none;">
+                <button id="Vflip">Vertical</button>
+                <button id="Hflip">Horizon</button>
+            </div>
+        </div>
+        <br />
+        <div id="SpinType">
+            <button id="spin-button">Spin ↪</button>
+            <div id="spinpanel-ctrl" style="display:none; position:absolute; margin-top:0; padding:0;">
+                <div id="spin-option-panel">
+                    <div id="spin-option">
+                        <div id="button-sipn-option">
+                            <div id="standardPanel">
+                                <label id="standard" style="font-size:12px; color:grey;">View</label>
+                                <div class="Bstandard">
+                                    <button id="Xspin">X</button>
+                                    <button id="Yspin">Y</button>
+                                    <button id="Zspin">Z</button>
+                                </div>
+                            </div>
+                            <div id="direPanel">
+                                <label id="direction" style="font-size:12px; color:gray;">Direction</label>
+                                <div class="Bdire">
+                                    <button id="Rspin" title="Clockwise" style="width:40px;">Right</button>
+                                    <button id="Lspin" title="CounterClockwise" style="width:35px;">Left</button>
+                                    <button id="Altspin" style="width:70px;">Alternate</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="spdPanel">
+                            <label id="speed" for="spdInput" style="font-size: 12px; color: grey;">Speed：</label>
+                            <input id="spdInput" type="number" style="font-size:8px;" placeholder="Default" />
+                        </div>
+                    </div>
+                    <button id="ApplySpin">Apply</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="OtherType" style="margin-bottom: 150px; margin-top: 0; display:block;">
+            <div class="button-for-dec">
+                <button id="Others">Other Animations ↪</button>
+            </div>
+            <div id="OthersPanel">
+                <button id="jelly">Jelly</button>
+                <button id="tada">Ta→Da↑</button>
+                <button id="bounce">Bounce</button>
+                <button id="jump">Jump</button>
+                <button id="shake">Shake</button>
+                <button id="twitch">Twitch</button>
+                <button id="sparkle">Sparkle</button>
+                <button id="blur">Blur</button>
+
+            </div>
+        </div>
+        <div id="PS" style="padding-bottom:8px;">
+            <label style="font-size:8px; color:#999;">
+                If you are interested in translating this website into other languages and would like to fetch resource, you can contact me through <a href="https://forms.gle/DJbN8k6f42PET8f18" style="padding: 0; text-decoration: auto; color: #6fc400;" target="_blank">here</a>.
+            </label>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+        });
+
+
+        document.getElementById('copy-button').addEventListener('click', function () {
+            const textArea = document.getElementById('text-input');
+
+            // 選擇文本區域內的文字
+            textArea.select();
+
+            // 複製選中的文字到剪貼簿
+            document.execCommand('copy');
+        });
+        const clearAllButton = document.getElementById('clearAll');
+        let isConfirming = false; // 用於跟蹤是否處於確認模式
+
+        clearAllButton.addEventListener('click', function () {
+            if (isConfirming) {
+                // 如果處於確認模式，執行清空文本區域的操作
+                const textAreas = document.querySelectorAll('textarea');
+                textAreas.forEach(textArea => {
+                    textArea.value = '';
+                });
+
+                // 重置按鈕文字和確認模式
+                clearAllButton.classList.remove('bold-button');
+                clearAllButton.textContent = 'Clear All';
+                clearAllButton.title = '';
+                isConfirming = false;
+            } else {
+                // 如果不在確認模式下，切換到確認模式
+                clearAllButton.classList.add('bold-button');
+                clearAllButton.textContent = 'Sure？';
+                isConfirming = true;
+                setTimeout(function () {
+                    clearAllButton.classList.remove('bold-button');
+                    clearAllButton.textContent = 'Clear All';
+                    clearAllButton.title = '';
+                    isConfirming = false;
+                }, 3000);
+            }
+        });
+
+
+        $('#picker').colpick({
+            colorScheme: 'light',
+            onChange: function (hsb, hex, rgb, el, bySetColor) {
+                $(el).val(hex);
+            }
+        });
+
+        // 定義一個包含隨機事件的陣列
+        var randomEvents = [
+            "What's happening around you?",
+            "What are you up to?",
+            "What's on your mind?",
+            "Start writing...",
+            "Waiting for you to write...",
+            "What do you want to say?"
+        ];
+
+        // 隨機選擇一個事件
+        var randomEvent = randomEvents[Math.floor(Math.random() * randomEvents.length)];
+
+        // 將隨機事件應用到 textarea 的 placeholder 屬性上
+        document.getElementById("text-input").placeholder = randomEvent;
+
+    </script>
+    <style>
+        #spdPanel::after {
+            display: block;
+            content: "second a round";
+            font-size: 12px;
+            position: absolute;
+            left: 136px;
+            bottom: 5px;
+            color: gray;
+        }
+
+    </style>
+</body>
+
+</html>
